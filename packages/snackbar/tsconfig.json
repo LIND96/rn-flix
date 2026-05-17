@@ -1,21 +1,15 @@
 {
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules/*"
-  ],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*"],
   "compilerOptions": {
     "paths": {
-      "react-native-flix-snackbar": [
-        "./src/index"
-      ]
+      "react-native-flix-snackbar": ["./src/index"]
     },
-    "allowJs": true,
     "module": "es6",
     "declaration": true,
     "skipLibCheck": true,
     "outDir": "dist",
+    "noEmit": false,
     "noImplicitAny": true,
     "removeComments": true,
     "allowUnreachableCode": false,
@@ -23,9 +17,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "lib": [
-      "esnext"
-    ],
+    "lib": ["esnext"],
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,

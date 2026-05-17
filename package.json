@@ -21,11 +21,13 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@babel/helper-globals": "^7.28.0",
     "@expo/webpack-config": "^19.0.0",
     "@react-native/eslint-config": "0.75.2",
     "@release-it/conventional-changelog": "^5.0.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^5.0.0",
+    "baseline-browser-mapping": "^2.10.30",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
