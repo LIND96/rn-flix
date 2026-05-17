@@ -31,6 +31,13 @@ const Example = (props) => {
             show('Item added to cart', { backgroundColor: '#006e1c' }),
         }),
     },
+    {
+      title: 'Snackbar with Icon',
+      onPress: () =>
+        show('Message with an icon!', {
+          icon: <Text style={{ fontSize: 20 }}>🚀</Text>,
+        }),
+    },
   ];
 
   return (

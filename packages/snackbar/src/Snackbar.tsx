@@ -5,6 +5,7 @@ import {
   Text,
   TextStyle,
   TouchableOpacity,
+  View,
 } from 'react-native';
 
 let handleTimeout: NodeJS.Timeout;
@@ -30,6 +31,8 @@ export interface SnackbarData {
   id: string;
   /** The function to hide the snackbar. */
   hide: () => void;
+  /** Custom element to display on the left of the message (optional) */
+  icon?: React.ReactNode
 }
 
 /**
@@ -49,6 +52,7 @@ const Snackbar: React.FC<SnackbarData> = ({
   duration = 2000,
   backgroundColor = '#424940',
   color = '#dee5d8',
+  icon,
   id,
   hide,
 }) => {
@@ -107,18 +111,21 @@ const Snackbar: React.FC<SnackbarData> = ({
         styleAnimation as any,
       ]}
     >
-      <Text
-        style={[
-          styles.SnackbarText,
-          {
-            color,
-            paddingRight: label ? 0 : 16,
-          },
-          textStyle,
-        ]}
-      >
-        {message}
-      </Text>
+      <View style={styles.messageContainer}>
+        {icon && <View style={styles.iconContainer}>{icon}</View>}
+        <Text
+          style={[
+            styles.SnackbarText,
+            {
+              color,
+              paddingRight: label ? 0 : 16,
+            },
+            textStyle,
+          ]}
+        >
+          {message}
+        </Text>
+      </View>
       {label && (
         <TouchableOpacity
           style={styles.buttonContainer}
@@ -134,6 +141,14 @@ const Snackbar: React.FC<SnackbarData> = ({
 };
 
 const styles = StyleSheet.create({
+  messageContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  iconContainer: {
+    paddingLeft: 16,
+  },
   SnackbarText: {
     flex: 1,
     padding: 16,
