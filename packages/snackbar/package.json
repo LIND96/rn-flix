@@ -25,6 +25,9 @@
         "preset": "angular",
         "infile": "CHANGELOG.md"
       }
+    },
+    "hooks": {
+      "before:release": "npm run build"
     }
   },
   "repository": {
