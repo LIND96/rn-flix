@@ -78,3 +78,7 @@ android/keystores/debug.keystore
 dist/
 .env
 package-lock.json
+
+# Testing
+coverage/
+junit.xml

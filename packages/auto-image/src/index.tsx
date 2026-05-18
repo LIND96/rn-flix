@@ -95,7 +95,7 @@ const AutoImage: React.FC<AutoImageProps> & {
     } else {
       InitImage();
     }
-  }, []);
+  }, [props.width, props.height]);
 
   useEffect(() => {
     if (isError) {
