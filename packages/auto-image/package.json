@@ -13,7 +13,7 @@
   "scripts": {
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "release": "release-it",
-    "build": "tsc && cp src/errorImage.png dist/errorImage.png"
+    "build": "tsc && cp src/errorImage.png dist/errorImage.png && rm -rf dist/__tests__"
   },
   "release-it": {
     "git": false,
