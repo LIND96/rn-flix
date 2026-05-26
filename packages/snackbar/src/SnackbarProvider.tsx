@@ -46,6 +46,7 @@ const SnackbarProvider: React.FC<SnackbarProviderProps> = ({
   style,
 }) => {
   const { snackbarData, show, hide } = InternalUseSnackbar();
+  const customeStyle = snackbarData?.customeStyle || {}
   const contextValue = useMemo(() => ({ show, hide }), [show, hide]);
   const behavior = useMemo(
     () => (Platform.OS === 'ios' ? 'position' : undefined),
@@ -57,7 +58,7 @@ const SnackbarProvider: React.FC<SnackbarProviderProps> = ({
       {children}
       <KeyboardAvoidingView
         behavior={behavior}
-        style={[styles.containerView, style]}
+        style={[styles.containerView, style, customeStyle]}
         pointerEvents="box-none"
       >
         {snackbarData && <Snackbar key={snackbarData.id} {...snackbarData} />}

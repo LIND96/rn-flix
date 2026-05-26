@@ -6,6 +6,7 @@ import {
   TextStyle,
   TouchableOpacity,
   View,
+  ViewStyle
 } from 'react-native';
 
 let handleTimeout: NodeJS.Timeout;
@@ -32,7 +33,10 @@ export interface SnackbarData {
   /** The function to hide the snackbar. */
   hide: () => void;
   /** Custom element to display on the left of the message (optional) */
-  icon?: React.ReactNode
+  icon?: React.ReactNode;
+  /** Custom style to display styling UI (optional) */
+  customeStyle?: ViewStyle;
+
 }
 
 /**
